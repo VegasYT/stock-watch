@@ -1,0 +1,31 @@
+[project]
+name = "StockWatch"
+version = "0.2.0"
+description = "StockWatch mobile app built with Flet"
+authors = [
+  { name = "Your Name", email = "you@example.com" }
+]
+dependencies = [
+  "flet==0.27.6",
+  "flet-onesignal>=0.3.1",
+]
+requires-python = ">=3.9"
+
+
+[tool.flet]
+org = "ru.vegas"  # будет использоваться как package id: ru.vegas.stockwatch
+product = "Stockwatch"
+company = "VEGAS"
+copyright = "Copyright (C) 2025 by StockWatch"
+
+
+[tool.flet.android]
+package_id = "ru.vegas.stockwatch"
+# split_per_abi = true
+# abis = ["arm64-v8a"]
+min_sdk_version = 21
+target_sdk_version = 34
+
+
+[tool.flet.app]
+path = "src"
