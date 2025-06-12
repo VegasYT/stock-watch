@@ -38,3 +38,8 @@ class OneSignalTokenRepository(BaseRepository):
             )
         )
         await self.session.execute(stmt)
+
+    async def get_player_id(self, user_id: int) -> str | None:
+        query = select(self.model.player_id).where(self.model.user_id == user_id)
+        result = await self.session.execute(query)
+        return result.scalar_one_or_none()

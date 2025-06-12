@@ -46,11 +46,6 @@ class AlertRepository(BaseRepository):
         result = await self.session.execute(query)
         return result.scalars().all()
 
-    async def get_symbol_by_id(self, stock_id: int) -> str | None:
-        query = select(self.model.symbol).where(self.model.id == stock_id)
-        result = await self.session.execute(query)
-        return result.scalar_one_or_none()
-
     async def get_player_id(self, user_id: int) -> str | None:
         query = select(self.model.player_id).where(self.model.user_id == user_id)
         result = await self.session.execute(query)

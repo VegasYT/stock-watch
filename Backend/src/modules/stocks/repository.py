@@ -56,3 +56,9 @@ class StockRepository(BaseRepository):
             .values(dominant_color=color)
         )
         await self.session.execute(stmt)
+
+    
+    async def get_symbol_by_id(self, stock_id: int) -> str | None:
+        query = select(self.model.symbol).where(self.model.id == stock_id)
+        result = await self.session.execute(query)
+        return result.scalar_one_or_none()

@@ -3,6 +3,7 @@ import httpx
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from src.modules.stocks.repository import StockRepository
 from src.modules.notify.repository import AlertRepository
 from src.modules.notify.schemas import AlertCreate, AlertUpdate
 from src.modules.stock_prices.repository import StockPriceRepository
@@ -17,6 +18,7 @@ class AlertService:
         self.repo = AlertRepository(session)
         self.price_repo = StockPriceRepository(session)
         self.onesignal_repo = OneSignalTokenRepository(session)
+        self.stock_repo = StockRepository(session)
 
     # === CRUD ===
     async def create_alert(self, user_id: int, data: AlertCreate):
