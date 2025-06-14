@@ -237,12 +237,14 @@ def asset_page(page: ft.Page):
             return
 
         # raw = await fetch_price_history(stock_id, days=current_days.value, count=150)
-        history = await fetch_price_history(stock_id, days=current_days.value, count=150, page=page)
+        history = await fetch_price_history(stock_id, days=current_days.value, count=100, page=page)
+        # history = await fetch_price_history(stock_id, days=current_days.value, count=150)
         raw = history.get("data", [])
         if not raw:
             chart_container.content = ft.Text("Нет данных", color=C.RED)
             page.update()
             return
+
 
         data = []
         for row in raw:
@@ -267,6 +269,11 @@ def asset_page(page: ft.Page):
         if data:
             first_date = data[0]["date"]
             last_date = data[-1]["date"]
+
+        # print("LEN DATA:", len(raw))
+        # print("LEN AFTER FILTER:", len(data))
+        # print("MIN:", min_price, "MAX:", max_price)
+        # print("min_y:", min_y, "max_y:", max_y)
 
         for tx in transactions:
             try:
@@ -319,6 +326,7 @@ def asset_page(page: ft.Page):
             data_points=points,
             stroke_width=2,
             curved=True,
+            # curved=len(points) < 100,
             color=ft.colors.WHITE,
             stroke_cap_round=True,
         )
@@ -442,7 +450,7 @@ def asset_page(page: ft.Page):
             height=250,
             bottom_axis=ft.ChartAxis(
                 labels         = bottom_labels,
-                labels_interval= 1,      # ← прореживание выключено
+                labels_interval= 1,
                 labels_size    = 32,
             ),
             on_chart_event=handle_chart_event,

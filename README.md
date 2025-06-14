@@ -9,3 +9,9 @@
 ## 🗄️ Архитектура бд 
 
 ![DB](https://iimg.su/s/12/YWjNL1m52jg8eQl4vF2ZQvLVJt1TvDV3V1EtrYmy.png)
+
+
+👥 Авторы
+```
+Cкорик Андрей — VegasYT
+```
