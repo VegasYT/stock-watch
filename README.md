@@ -1,6 +1,6 @@
 # 👨‍👦‍👦 StockWatch
 
-![Project Logo](https://iimg.su/s/12/IbpENZjz6iadlhiHZcNENQBwe5dq07SH8hTeJAq3.png)
+![Project Logo](https://iimg.su/s/22/gQJMhOVxn9EcLQKMyETVRYy3aQlgdrdwB8YPRYUN.png)
 
 ## 📋 Описание проекта 
 
@@ -8,7 +8,7 @@
 
 ## 🗄️ Архитектура бд 
 
-![DB](https://iimg.su/s/12/YWjNL1m52jg8eQl4vF2ZQvLVJt1TvDV3V1EtrYmy.png)
+![DB](https://iimg.su/s/22/gI49tB0xWAzN2a3BbcXSOnMUCkXOzVapybTBKIDw.png)
 
 
 👥 Авторы
